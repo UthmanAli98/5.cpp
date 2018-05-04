@@ -63,77 +63,30 @@ return count;
 
 string itos (int n)
 {
-  
-string num;
-  
- 
-switch (n)
+ string numChange="";   //create empty string
+    bool negative = false;    
+    if( n == 0 || n == -0){
+         return "0";
+    }
+    //check for negative
+    else if(n < 0){
+    negative = true;
+    n = n * -1; //changes back to positive
+    }
+    while(n)
     {
-    
-case 0:
-      
-num = "0" + num;
-      
-break;
-    
-case 1:
-      
-num = "1" + num;
-      
-break;
-    
-case 2:
-      
-num = "2" + num;
-      
-break;
-    
-case 3:
-      
-num = "3" + num;
-      
-break;
-    
-case 4:
-      
-num = "4" + num;
-      
-break;
-    
-case 5:
-      
-num = "5" + num;
-      
-break;
-    
-case 6:
-      
-num = "6" + num;
-      
-break;
-    
-case 7:
-      
-num = "7" + num;
-      
-break;
-    
-case 8:
-      
-num = "8" + num;
-      
-break;
-    
-case 9:
-      
-num = "9" + num;
-      
-break;
-    
-}
-  
+        int x=n%10;
+        n/=10;
+        char i='0';
+        i=i+x;
+        numChange=i+numChange;      //append new character at the front of the string
+    }
+    if(negative){
+        return "-" + numChange;
+    }
+    return numChange;
  
-return num;
+
 
 }
 
